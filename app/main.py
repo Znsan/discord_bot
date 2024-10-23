@@ -45,7 +45,7 @@ async def VERIFY(interaction: discord.Interaction, role: discord.Role):
         )
         view = discord.ui.View()
 
-        async def button_callback(interaction: discord.Interaction):
+        async def BUTTON_ACTION(interaction: discord.Interaction):
             if auth_role not in interaction.user.roles:
                 await interaction.user.add_roles(auth_role)
                 await interaction.response.send_message(f"{auth_role.name} ロールが付与されました。", ephemeral=True)
@@ -53,7 +53,7 @@ async def VERIFY(interaction: discord.Interaction, role: discord.Role):
                 await interaction.response.send_message(f"あなたは既に {auth_role.name} ロールを持っています。", ephemeral=True)
 
         button = discord.ui.Button(label="verify✅", style=discord.ButtonStyle.primary)
-        button.callback = button_callback
+        button.callback = BUTTON_ACTION
         view.add_item(button)
 
         await ch.send(embed=embed, view=view)
