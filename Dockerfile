@@ -1,5 +1,5 @@
 FROM python:3.12.4
-WORKDIR /app
+WORKDIR /bot
 
 # 更新・日本語化
 RUN apt-get update && apt-get -y install locales && apt-get -y upgrade && \
@@ -11,9 +11,11 @@ ENV TZ Asia/Tokyo
 ENV TERM xterm
 
 # pip install
-COPY requirements.txt /app/
+COPY requirements.txt /bot/
+RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
-COPY . /app
+COPY . /bot
 
 # ポート開放 (uvicornで指定したポート)
 EXPOSE 8080
