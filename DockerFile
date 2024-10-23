@@ -28,7 +28,7 @@ COPY . /app
 
 # 以下はKoyebで運用する際に必要
 # ポート番号8080解放
-EXPOSE 8080
+EXPOSE 8000
 
 # DiscordBotとFastAPIのサーバ起動
 CMD python app/main.py
