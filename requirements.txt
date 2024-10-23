@@ -3,3 +3,4 @@ discord==2.3.2
 discord-py-interactions==5.13.2
 fastapi==0.115.3
 uvicorn==0.32.0
+python-dotenv==0.21.0
