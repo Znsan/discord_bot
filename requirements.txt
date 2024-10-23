@@ -1,5 +1,5 @@
 discord.py==2.4.0
-iscord-py-interactions==5.13.2
+discord-py-interactions==5.13.2
 fastapi==0.115.3
 py-cord==2.6.1
 uvicorn==0.32.0
